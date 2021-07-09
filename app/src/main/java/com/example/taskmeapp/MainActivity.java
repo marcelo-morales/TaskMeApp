@@ -8,6 +8,8 @@ import android.os.Bundle;
 Adding a comment to make sure I am able to push to the repo - delete later
  */
 
+//this comment should be in marcelo branch
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
