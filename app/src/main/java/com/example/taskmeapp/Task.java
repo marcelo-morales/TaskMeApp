@@ -5,7 +5,11 @@ import java.lang.String;
 /**
  * A Task that be completed or overdue for the TaskMeApp
  */
+
 public class Task implements Comparable<Task> {
+    public  Task(){
+
+    }
     private String task_name;
     private String deadline;
     private String category;
@@ -83,7 +87,7 @@ public class Task implements Comparable<Task> {
         String otherDay = otherDeadline[1];
 
         if (thisYear.compareTo(otherYear) != 0) {
-            return thisYear.compareTo(otherYear);
+                return thisYear.compareTo(otherYear);
         }
 
         if (thisMonth.compareTo(otherMonth) != 0) {

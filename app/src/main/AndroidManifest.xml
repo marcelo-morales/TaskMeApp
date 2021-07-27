@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TaskMeApp">
+        <activity android:name=".activeTask"></activity>
         <activity
             android:name=".MainActivity"
             android:label="TaskMeApp">
