@@ -10,15 +10,15 @@ public class Task implements Comparable<Task> {
     public  Task(){
 
     }
-    private String task_name;
+    private String name;
     private String deadline;
     private String category;
-    private Boolean completed;
+    private boolean completed;
     private String completedDate;
 
 
-    public Task(String task_name, String deadline, String category) {
-        this.task_name = task_name;
+    public Task(String name, String deadline, String category) {
+        this.name = name;
         this.deadline = deadline;
         this.category = category;
         this.completedDate = "";
@@ -27,15 +27,15 @@ public class Task implements Comparable<Task> {
 
     @Override
     public String toString() {
-        if (completed) {
-            return "Task: " + task_name + "\n" + "Completed: " + completedDate + "\n" + "Category: " + category;
+        if (this.completed) {
+            return "Task: " + name + "\n" + "Completed: " + completedDate + "\n" + "Category: " + category;
         } else {
-            return "Task: " + task_name + "\n" + "Due: " + deadline + "\n" + "Category: " + category;
+            return "Task: " + name + "\n" + "Due: " + deadline + "\n" + "Category: " + category;
         }
     }
 
     public String getName() {
-        return task_name;
+        return name;
     }
 
     public String getDeadline() {
@@ -46,8 +46,12 @@ public class Task implements Comparable<Task> {
         return category;
     }
 
+    public boolean getCompletionStatus() {
+        return completed;
+    }
+
     public void setName (String name ) {
-        this.task_name = name;
+        this.name = name;
     }
 
     public void setDeadline(String deadline) {
