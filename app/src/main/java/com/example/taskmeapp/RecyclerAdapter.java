@@ -4,25 +4,51 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
-    private ArrayList<CompletedTask> tasks;
+interface ClickListener {
 
-    public RecyclerAdapter(ArrayList<CompletedTask> tasks) {
+    void onPositionClicked(int position);
+
+    void onLongClicked(int position);
+}
+
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
+    private ArrayList<Task> tasks;
+
+
+    public RecyclerAdapter(ArrayList<Task> tasks) {
         this.tasks = tasks;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener{
         private TextView nameTxt;
+
 
         public MyViewHolder(final View view) {
             super(view);
             nameTxt = view.findViewById(R.id.textView);
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (v.getId() == nameTxt.getId()) {
+                Toast.makeText(v.getContext(), "ITEM PRESSED = " + String.valueOf(getAdapterPosition()), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(v.getContext(), "ROW PRESSED = " + String.valueOf(getAdapterPosition()), Toast.LENGTH_SHORT).show();
+            }
+
+            //listenerRef.get().onPositionClicked(getAdapterPosition());
+        }
+
+        @Override
+        public boolean onLongClick(View v) {
+            return false;
         }
     }
 
@@ -35,7 +61,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder holder, int position) {
-        String name = tasks.get(position).getTaskName();
+        String name = tasks.get(position).getWhat();
         holder.nameTxt.setText(name);
     }
 

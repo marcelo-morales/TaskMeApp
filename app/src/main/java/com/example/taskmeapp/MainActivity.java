@@ -25,5 +25,12 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(MainActivity.this, CompletedList.class);
             startActivity(i);
         });
+
+        btnMove = (Button) findViewById(R.id.button);
+
+        btnMove.setOnClickListener(v -> {
+            Intent i = new Intent(MainActivity.this, Statistics.class);
+            startActivity(i);
+        });
     }
 }

@@ -21,6 +21,9 @@
         <activity
             android:name="com.example.taskmeapp.CompletedList"
             android:label="@string/app_name" />
+        <activity
+            android:name="com.example.taskmeapp.Statistics"
+            android:label="@string/app_name" />
     </application>
 
 </manifest>
