@@ -29,7 +29,6 @@ public class activeTask extends AppCompatActivity {
     DatabaseReference myRef = database.getReference();
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +65,8 @@ public class activeTask extends AppCompatActivity {
         });
 
 
+
+
        /* database.addValueEventListener((new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -85,6 +86,11 @@ public class activeTask extends AppCompatActivity {
 
             }
         }));*/
+
+    }
+
+    public void updateCompletedTask(Task newTaskToAdd) {
+        list.add(newTaskToAdd);
 
     }
 }

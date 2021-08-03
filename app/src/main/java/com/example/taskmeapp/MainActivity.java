@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference myRef = database.getReference("Tasks");
 
 
-
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+    public void updateActiveTask() {
+
+    }
+
     //Temp button for taking me to screen #2 active tasks
     public void openActiveTasks() {
         Intent intent = new Intent(this, activeTask.class);
