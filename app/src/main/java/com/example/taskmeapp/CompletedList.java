@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 import static java.security.AccessController.getContext;
 
-public class CompletedList extends AppCompatActivity {
+public class CompletedList extends AppCompatActivity implements RecyclerAdapter.OnNoteListener{
     private ArrayList<Task> tasks;
     private RecyclerView recyclerView;
 
@@ -44,7 +44,7 @@ public class CompletedList extends AppCompatActivity {
 
         setTaskInfo();
         setAdapter();
-
+        
 
     }
 
@@ -53,7 +53,7 @@ public class CompletedList extends AppCompatActivity {
 
 
     private void setAdapter() {
-        RecyclerAdapter adapter = new RecyclerAdapter(tasks);
+        RecyclerAdapter adapter = new RecyclerAdapter(tasks, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -64,5 +64,11 @@ public class CompletedList extends AppCompatActivity {
         tasks.add(new Task("Finish Dishes", "12", "Chores"));
         tasks.add(new Task("Clean Up House", "12", "Chores"));
         tasks.add(new Task("Wash the Car", "12", "Chores"));
+    }
+
+    @Override
+    public void OnNoteClick(int position, View v) {
+        Task pos = tasks.get(position);
+        Toast.makeText(v.getContext(), ""+ pos.getWhat(), Toast.LENGTH_SHORT).show();
     }
 }

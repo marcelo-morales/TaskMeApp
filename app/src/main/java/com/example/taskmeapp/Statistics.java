@@ -1,4 +1,4 @@
-package com.example.taskmeapp;
+/*package com.example.taskmeapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -194,3 +194,4 @@ public class Statistics extends AppCompatActivity
     }
 
 }
+ */

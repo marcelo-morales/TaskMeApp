@@ -7,39 +7,41 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/first_text"
+        android:id="@+id/done_by_deadline"
         android:layout_width="407dp"
         android:layout_height="51dp"
+        android:layout_marginTop="20dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/second_text"
+        app:layout_constraintBottom_toTopOf="@+id/done_after_due"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.717" />
 
     <TextView
-        android:id="@+id/second_text"
+        android:id="@+id/done_after_due"
         android:layout_width="414dp"
         android:layout_height="53dp"
         android:layout_marginTop="100dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/third_text"
+        app:layout_constraintBottom_toTopOf="@+id/past_due"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/first_text" />
+        app:layout_constraintTop_toBottomOf="@+id/done_by_deadline" />
 
     <TextView
-        android:id="@+id/third_text"
+        android:id="@+id/past_due"
         android:layout_width="410dp"
         android:layout_height="45dp"
         android:layout_marginTop="100dp"
+        android:layout_marginBottom="200dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/second_text"
+        app:layout_constraintTop_toBottomOf="@+id/done_after_due"
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.Toolbar
@@ -53,9 +55,28 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
+        android:layout_width="56dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/past_due"
+        tools:layout_editor_absoluteX="177dp" />
+
+    <TextView
+        android:id="@+id/to_be_done"
+        android:layout_width="410dp"
+        android:layout_height="49dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="569dp" />
+
+    <TextView
+        android:id="@+id/total_tasks"
         android:layout_width="409dp"
-        android:layout_height="193dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="148dp" />
+        android:layout_height="35dp"
+        android:layout_marginBottom="44dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
